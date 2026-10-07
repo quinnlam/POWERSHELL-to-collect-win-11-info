@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Local Computer Report</title>
+<style>
+    @page { size: portrait; margin: 15mm; }
+    body { font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif; margin: 20px; background:#f7f7f9; color:#222; }
+    h1 { font-size: 22px; margin-bottom: 4px; }
+    h2 { font-size: 16px; margin: 0 0 10px 0; color: #1F4E79; border-bottom: 2px solid #1F4E79; padding-bottom: 4px; }
+    .meta { color: #333; font-size: 12px; font-weight: bold; margin-bottom: 10px; }
+    .signature-line { display: flex; flex-wrap: wrap; gap: 22px; margin: 0 0 20px 0; font-size: 13px; color: #333; }
+    .sig-item { display: flex; align-items: flex-end; white-space: nowrap; }
+    .sig-blank { display: inline-block; width: 120px; border-bottom: 1px solid #333; margin-left: 6px; height: 16px; }
+    .panel { background:#fff; border: 1px solid #ddd; border-radius: 6px; padding: 12px 16px; margin-bottom: 20px; }
+    .panel h2.section-title { font-size: 14px; margin: 0 0 8px 0; color: #333; border: none; padding: 0; }
+    .panel-buttons { margin-bottom: 10px; }
+    .panel-buttons button { font-size: 12px; padding: 4px 10px; margin-right: 8px; cursor: pointer; }
+    .toggle-list { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+    .toggle-item { font-size: 13px; white-space: nowrap; }
+    .toggle-item input { margin-right: 4px; }
+    .section { background:#fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px 20px; margin-bottom: 20px; }
+    table { border-collapse: collapse; width: 100%; }
+    thead { display: table-header-group; }
+    tr { page-break-inside: avoid; }
+    th, td { border: 1px solid #ddd; padding: 6px 10px; font-size: 12px; text-align: left; vertical-align: top; }
+    th { background: #2f5597; color: #fff; }
+    td.labelCol { font-weight: bold; background: #f0f4fa; white-space: nowrap; }
+    td.hasperm { color: #1a7f37; font-weight: bold; }
+    td.noperm { color: #b00020; font-weight: bold; }
+    td.errCell { color: #b00020; font-style: italic; }
+    .page-section { page-break-before: always; }
+    @media print {
+        body { background: #fff; margin: 0; }
+        .section { border: none; box-shadow: none; }
+        .panel { display: none; }
+    }
+</style>
+</head>
+<body>
+
+<h1>Local Computer Report</h1>
+<div class="meta">Computer: DESKTOP-T6T9GBP &nbsp;|&nbsp; Generated: 2026-10-05 21:10:40 &nbsp;|&nbsp; Collected by: DESKTOP-T6T9GBP\KL &nbsp;|&nbsp; IP Address: IP: 192.168.68.54/255.255.252.0  |  Gateway: 192.168.68.1  |  DNS: 209.18.47.61, 209.18.47.62, 192.168.68.1</div>
+
+<div class="signature-line">
+    <span class="sig-item">DGM:<span class="sig-blank"></span></span>
+    <span class="sig-item">CISO:<span class="sig-blank"></span></span>
+    <span class="sig-item">ISO:<span class="sig-blank"></span></span>
+    <span class="sig-item">IT MANAGER:<span class="sig-blank"></span></span>
+    <span class="sig-item">IT:<span class="sig-blank"></span></span>
+</div>
+
+<div class="panel">
+    <h2 class="section-title">Show / Hide Sections (checked sections will be displayed below; default is all shown)</h2>
+    <div class="panel-buttons">
+        <button type="button" onclick="setAllSections(true)">Show All</button>
+        <button type="button" onclick="setAllSections(false)">Hide All</button>
+    </div>
+    <div class="toggle-list" id="sectionToggleList">
+        <label class="toggle-item"><input type="checkbox" class="sectionChk" data-target="section-1" checked onchange="applySectionFilters()"> 1. About This PC</label>
+        <label class="toggle-item"><input type="checkbox" class="sectionChk" data-target="section-2" checked onchange="applySectionFilters()"> 2. Local User Accounts</label>
+        <label class="toggle-item"><input type="checkbox" class="sectionChk" data-target="section-3" checked onchange="applySectionFilters()"> 3. Administrators Group Members</label>
+        <label class="toggle-item"><input type="checkbox" class="sectionChk" data-target="section-4" checked onchange="applySectionFilters()"> 4. BitLocker Status</label>
+        <label class="toggle-item"><input type="checkbox" class="sectionChk" data-target="section-5" checked onchange="applySectionFilters()"> 5. Antivirus Status</label>
+        <label class="toggle-item"><input type="checkbox" class="sectionChk" data-target="section-6" checked onchange="applySectionFilters()"> 6. Installed Software</label>
+        <label class="toggle-item"><input type="checkbox" class="sectionChk" data-target="section-7" checked onchange="applySectionFilters()"> 7. Shared Folders</label>
+        <label class="toggle-item"><input type="checkbox" class="sectionChk" data-target="section-8" checked onchange="applySectionFilters()"> 8. Screen Saver Settings</label>
+        <label class="toggle-item"><input type="checkbox" class="sectionChk" data-target="section-9" checked onchange="applySectionFilters()"> 9. Windows Quality / Feature Updates (Latest 10)</label>
+    </div>
+</div>
+
+<div class="section" id="section-1">
+    <h2>1. About This PC</h2>
+    <table>
+        <tbody>
+        <tr><td class='labelCol'>Computer Name</td><td>DESKTOP-T6T9GBP</td></tr>
+<tr><td class='labelCol'>Manufacturer</td><td>ASUS</td></tr>
+<tr><td class='labelCol'>Model</td><td>System Product Name</td></tr>
+<tr><td class='labelCol'>Operating System</td><td>Microsoft Windows 11 专业版</td></tr>
+<tr><td class='labelCol'>OS Version / Build</td><td>10.0.26300 (Build 26300)</td></tr>
+<tr><td class='labelCol'>System Type</td><td>64 位</td></tr>
+<tr><td class='labelCol'>Processor</td><td>AMD Ryzen 7 9850X3D 8-Core Processor           </td></tr>
+<tr><td class='labelCol'>Installed RAM</td><td>31.15 GB</td></tr>
+<tr><td class='labelCol'>Domain / Workgroup</td><td>WORKGROUP (Workgroup)</td></tr>
+<tr><td class='labelCol'>BIOS Serial Number</td><td>System Serial Number</td></tr>
+<tr><td class='labelCol'>OS Install Date</td><td>02/01/2026 03:54:35</td></tr>
+<tr><td class='labelCol'>Last Boot Time</td><td>10/03/2026 17:28:45</td></tr>
+<tr><td class='labelCol'>Current User</td><td>DESKTOP-T6T9GBP\KL</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section page-section" id="section-2">
+    <h2>2. Local User Accounts</h2>
+    <table>
+        <thead><tr><th style="width:25%">User Name</th><th style="width:45%">Member Of (Local Groups)</th><th style="width:15%">Status</th></tr></thead>
+        <tbody>
+        <tr><td class='labelCol'>Administrator</td><td>Administrators</td><td class='noperm'>Disabled</td></tr>
+<tr><td class='labelCol'>CodexSandboxOffline</td><td>CodexSandboxUsers, Users</td><td class='hasperm'>Enabled</td></tr>
+<tr><td class='labelCol'>CodexSandboxOnline</td><td>CodexSandboxUsers, Users</td><td class='hasperm'>Enabled</td></tr>
+<tr><td class='labelCol'>DefaultAccount</td><td>System Managed Accounts Group</td><td class='noperm'>Disabled</td></tr>
+<tr><td class='labelCol'>Guest</td><td>Guests</td><td class='noperm'>Disabled</td></tr>
+<tr><td class='labelCol'>KL</td><td>Administrators</td><td class='hasperm'>Enabled</td></tr>
+<tr><td class='labelCol'>WDAGUtilityAccount</td><td>-</td><td class='noperm'>Disabled</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section" id="section-3">
+    <h2>3. Administrators Group Members</h2>
+    <table>
+        <thead><tr><th style="width:40%">Name</th><th style="width:20%">Type</th><th style="width:20%">Source</th></tr></thead>
+        <tbody>
+        <tr><td class='labelCol'>DESKTOP-T6T9GBP\Administrator</td><td>用户</td><td>Local</td></tr>
+<tr><td class='labelCol'>DESKTOP-T6T9GBP\KL</td><td>用户</td><td>Local</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section page-section" id="section-4">
+    <h2>4. BitLocker Status</h2>
+    <table>
+        <thead><tr><th style="width:20%">Drive</th><th style="width:40%">Volume Status</th><th style="width:40%">Protection Status</th></tr></thead>
+        <tbody>
+        <tr><td colspan='3' class='errCell'>Unable to retrieve BitLocker status (module not available, feature not present, or insufficient permission): 拒绝访问 </td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section" id="section-5">
+    <h2>5. Antivirus Status</h2>
+    <table>
+        <thead><tr><th style="width:40%">Product</th><th style="width:25%">Status</th><th style="width:25%">Last Update</th></tr></thead>
+        <tbody>
+        <tr><td class='labelCol'>Windows Defender</td><td class='hasperm'>Enabled</td><td>Sat, 03 Oct 2026 21:31:04 GMT</td></tr>
+<tr><td class='labelCol'>Windows Defender - Real-time Protection</td><td class='hasperm'>Enabled</td><td>-</td></tr>
+<tr><td class='labelCol'>Windows Defender - Signature Version</td><td>1.459.565.0</td><td>2026-10-05 01:59:12</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section page-section" id="section-6">
+    <h2>6. Installed Software</h2>
+    <table>
+        <thead><tr><th style="width:35%">Name</th><th style="width:15%">Version</th><th style="width:30%">Publisher</th><th style="width:15%">Install Date</th></tr></thead>
+        <tbody>
+        <tr><td class='labelCol'>7.1 Surround Sound</td><td>1.0.1.21</td><td>Razer Inc.</td><td>-</td></tr>
+<tr><td class='labelCol'>7-Zip 26.02 (x64)</td><td>26.02</td><td>Igor Pavlov</td><td>-</td></tr>
+<tr><td class='labelCol'>AMD 3D V-Cache Performance Optimizer Driver</td><td>1.0.0.12</td><td>Advanced Micro Devices, Inc.</td><td>2026-06-03</td></tr>
+<tr><td class='labelCol'>AMD Application Compatibility Database Driver</td><td>1.0.0.3</td><td>Advanced Micro Devices, Inc.</td><td>2026-06-03</td></tr>
+<tr><td class='labelCol'>AMD Chipset Software</td><td>8.03.25.247</td><td>Advanced Micro Devices, Inc.</td><td>-</td></tr>
+<tr><td class='labelCol'>AMD GPIO2 Driver</td><td>2.2.0.136</td><td>Advanced Micro Devices, Inc.</td><td>2026-06-03</td></tr>
+<tr><td class='labelCol'>AMD I2C Driver</td><td>1.2.0.126</td><td>Advanced Micro Devices, Inc.</td><td>2026-06-03</td></tr>
+<tr><td class='labelCol'>AMD Interface Driver</td><td>2.0.0.26</td><td>Advanced Micro Devices, Inc.</td><td>2026-06-03</td></tr>
+<tr><td class='labelCol'>AMD PPM Provisioning File Driver</td><td>8.0.0.59</td><td>Advanced Micro Devices, Inc.</td><td>2026-06-03</td></tr>
+<tr><td class='labelCol'>AMD PSP Driver</td><td>5.40.0.0</td><td>Advanced Micro Devices, Inc.</td><td>2026-06-03</td></tr>
+<tr><td class='labelCol'>AMD Software</td><td>25.10.36</td><td>Advanced Micro Devices, Inc.</td><td>-</td></tr>
+<tr><td class='labelCol'>AMD_Chipset_Drivers</td><td>8.03.25.247</td><td>Advanced Micro Devices, Inc.</td><td>2026-06-03</td></tr>
+<tr><td class='labelCol'>ASUS DriverHub</td><td>1.0.7.1</td><td>ASUSTeK COMPUTER INC.</td><td>-</td></tr>
+<tr><td class='labelCol'>Bitwarden</td><td>2026.8.0</td><td>Bitwarden Inc.</td><td>-</td></tr>
+<tr><td class='labelCol'>Cheat Engine 7.7</td><td></td><td>Cheat Engine</td><td>2026-08-28</td></tr>
+<tr><td class='labelCol'>CPUID ASUS CPU-Z 2.10</td><td>2.10</td><td>CPUID, Inc.</td><td>2026-06-03</td></tr>
+<tr><td class='labelCol'>Cryptomator</td><td>1.19.3.6495</td><td>Skymatic GmbH</td><td>2026-09-23</td></tr>
+<tr><td class='labelCol'>Foxit PhantomPDF</td><td>10.1.0.37527</td><td>Foxit Software Inc.</td><td>2026-02-01</td></tr>
+<tr><td class='labelCol'>FreeFileSync</td><td>14.10</td><td>FreeFileSync.org</td><td>2026-07-04</td></tr>
+<tr><td class='labelCol'>Git</td><td>2.52.0</td><td>The Git Development Community</td><td>2026-02-02</td></tr>
+<tr><td class='labelCol'>Google Chrome</td><td>154.0.8037.98</td><td>Google LLC</td><td>2026-10-05</td></tr>
+<tr><td class='labelCol'>LINE</td><td>9.14.0.3764</td><td>LY Corporation</td><td>-</td></tr>
+<tr><td class='labelCol'>Logi Download Assistant</td><td>2.0.1020</td><td>Logitech</td><td>-</td></tr>
+<tr><td class='labelCol'>Microsoft Edge</td><td>154.0.4258.53</td><td>Microsoft Corporation</td><td>2026-10-03</td></tr>
+<tr><td class='labelCol'>Microsoft Edge WebView2 Runtime</td><td>154.0.4258.53</td><td>Microsoft Corporation</td><td>2026-10-02</td></tr>
+<tr><td class='labelCol'>Microsoft GameInput</td><td>3.5.270.0</td><td>Microsoft Corporation</td><td>2026-09-27</td></tr>
+<tr><td class='labelCol'>Microsoft Office LTSC 標準版 2021 - zh-tw</td><td>16.0.14334.20918</td><td>Microsoft Corporation</td><td>-</td></tr>
+<tr><td class='labelCol'>Microsoft OneDrive</td><td>26.173.0906.0008</td><td>Microsoft Corporation</td><td>-</td></tr>
+<tr><td class='labelCol'>Microsoft Teams</td><td>1.4.00.19572</td><td>Microsoft Corporation</td><td>2026-02-01</td></tr>
+<tr><td class='labelCol'>Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501</td><td>12.0.30501.0</td><td>Microsoft Corporation</td><td>-</td></tr>
+<tr><td class='labelCol'>Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501</td><td>12.0.30501.0</td><td>Microsoft Corporation</td><td>-</td></tr>
+<tr><td class='labelCol'>Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.21005</td><td>12.0.21005</td><td>Microsoft Corporation</td><td>2026-08-15</td></tr>
+<tr><td class='labelCol'>Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.21005</td><td>12.0.21005</td><td>Microsoft Corporation</td><td>2026-08-15</td></tr>
+<tr><td class='labelCol'>Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.21005</td><td>12.0.21005</td><td>Microsoft Corporation</td><td>2026-08-15</td></tr>
+<tr><td class='labelCol'>Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.21005</td><td>12.0.21005</td><td>Microsoft Corporation</td><td>2026-08-15</td></tr>
+<tr><td class='labelCol'>Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.42.34438</td><td>14.42.34438.0</td><td>Microsoft Corporation</td><td>-</td></tr>
+<tr><td class='labelCol'>Microsoft Visual C++ 2022 X64 Additional Runtime - 14.42.34438</td><td>14.42.34438</td><td>Microsoft Corporation</td><td>2026-02-01</td></tr>
+<tr><td class='labelCol'>Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.42.34438</td><td>14.42.34438</td><td>Microsoft Corporation</td><td>2026-02-01</td></tr>
+<tr><td class='labelCol'>Microsoft Visual C++ 2022 X86 Additional Runtime - 14.50.35719</td><td>14.50.35719</td><td>Microsoft Corporation</td><td>2026-02-14</td></tr>
+<tr><td class='labelCol'>Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.50.35719</td><td>14.50.35719</td><td>Microsoft Corporation</td><td>2026-02-14</td></tr>
+<tr><td class='labelCol'>Microsoft Visual C++ v14 Redistributable (x86) - 14.50.35719</td><td>14.50.35719.0</td><td>Microsoft Corporation</td><td>-</td></tr>
+<tr><td class='labelCol'>Microsoft Visual Studio Code (User)</td><td>1.109.0</td><td>Microsoft Corporation</td><td>2026-02-06</td></tr>
+<tr><td class='labelCol'>Microsoft Windows Application Compatibility Fix Database</td><td></td><td></td><td>-</td></tr>
+<tr><td class='labelCol'>Motrix 1.8.19</td><td>1.8.19</td><td>Dr_rOot</td><td>-</td></tr>
+<tr><td class='labelCol'>NVIDIA AIUser Container</td><td>1.51</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA App 11.0.9.251</td><td>11.0.9.251</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA App driver settings</td><td>1.0</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA Backend</td><td>11.0.9.251</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA Container</td><td>1.51</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA FrameView SDK 1.9.12728.38614306</td><td>1.9.12728.38614306</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA HD 音频驱动程序 1.4.6.3</td><td>1.4.6.3</td><td>NVIDIA Corporation</td><td>2026-09-09</td></tr>
+<tr><td class='labelCol'>NVIDIA Install Application</td><td>2.1002.463.0</td><td>NVIDIA Corporation</td><td>2026-09-09</td></tr>
+<tr><td class='labelCol'>NVIDIA LocalSystem Container</td><td>1.51</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA MessageBus 3 for NvApp</td><td>3.21</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA NvDLISR</td><td>1.0</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA PhysX 系统软件 9.26.0703</td><td>9.26.0703</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA Session Container</td><td>1.51</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA ShadowPlay 11.0.9.500</td><td>11.0.9.500</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA Telemetry Client</td><td>19.8.1.0</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA User Container</td><td>1.51</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA Virtual Audio 4.92.0.0</td><td>4.92.0.0</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA Watchdog Plugin for NvContainer</td><td>1.51</td><td>NVIDIA Corporation</td><td>2026-09-04</td></tr>
+<tr><td class='labelCol'>NVIDIA 图形驱动程序 616.92</td><td>616.92</td><td>NVIDIA Corporation</td><td>2026-09-09</td></tr>
+<tr><td class='labelCol'>Office 16 Click-to-Run Extensibility Component</td><td>16.0.14334.20918</td><td>Microsoft Corporation</td><td>2026-09-21</td></tr>
+<tr><td class='labelCol'>Office 16 Click-to-Run Licensing Component</td><td>16.0.14334.20918</td><td>Microsoft Corporation</td><td>2026-09-21</td></tr>
+<tr><td class='labelCol'>Office 16 Click-to-Run Localization Component</td><td>16.0.14334.20756</td><td>Microsoft Corporation</td><td>2026-06-17</td></tr>
+<tr><td class='labelCol'>PotPlayer-64 bit</td><td>26.08.19.0</td><td>Kakao Corp.</td><td>-</td></tr>
+<tr><td class='labelCol'>Promontory_GPIO Driver</td><td>3.0.5.0</td><td>Advanced Micro Devices, Inc.</td><td>2026-06-03</td></tr>
+<tr><td class='labelCol'>Realtek Audio Driver</td><td>6.0.9888.1</td><td>Realtek Semiconductor Corp.</td><td>2026-02-01</td></tr>
+<tr><td class='labelCol'>Realtek Ethernet Controller Driver</td><td>11.27.50.0919</td><td>Realtek</td><td>2026-02-01</td></tr>
+<tr><td class='labelCol'>REDlauncher</td><td>5.4.0.13</td><td>CD Projekt RED</td><td>2026-09-29</td></tr>
+<tr><td class='labelCol'>Teams Machine-Wide Installer</td><td>1.4.0.19572</td><td>Microsoft Corporation</td><td>2026-02-01</td></tr>
+<tr><td class='labelCol'>Webex</td><td>46.3.0.34324</td><td>Cisco Systems, Inc</td><td>-</td></tr>
+<tr><td class='labelCol'>WinFsp 2025</td><td>2.1.25156</td><td>Navimatics LLC</td><td>2026-02-01</td></tr>
+<tr><td class='labelCol'>Yubico Authenticator</td><td>7.3.2</td><td>Yubico AB</td><td>2026-03-09</td></tr>
+<tr><td class='labelCol'>百度网盘</td><td>8.5.5</td><td>北京度友科技有限公司</td><td>-</td></tr>
+<tr><td class='labelCol'>富途牛牛</td><td>16.17.16208</td><td>富途网络(深圳)有限公司</td><td>-</td></tr>
+<tr><td class='labelCol'>微信</td><td>4.1.13.65</td><td>腾讯科技(深圳)有限公司</td><td>-</td></tr>
+<tr><td class='labelCol'>微信输入法</td><td>2.1.4.6</td><td>腾讯科技(深圳)有限公司</td><td>-</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section page-section" id="section-7">
+    <h2>7. Shared Folders</h2>
+    <table>
+        <thead><tr><th style="width:15%">Share Name</th><th style="width:25%">Local Path</th><th style="width:20%">Description</th><th style="width:40%">Permissions (Account: Type - Right)</th></tr></thead>
+        <tbody>
+        <tr><td class='labelCol'>ADMIN$</td><td>C:\WINDOWS</td><td>远程管理</td><td>BUILTIN\Administrators: Allow - Full<br/>BUILTIN\Backup Operators: Allow - Full<br/>NT AUTHORITY\INTERACTIVE: Allow - Full</td></tr>
+<tr><td class='labelCol'>C$</td><td>C:\</td><td>默认共享</td><td>BUILTIN\Administrators: Allow - Full<br/>BUILTIN\Backup Operators: Allow - Full<br/>NT AUTHORITY\INTERACTIVE: Allow - Full</td></tr>
+<tr><td class='labelCol'>D$</td><td>D:\</td><td>默认共享</td><td>BUILTIN\Administrators: Allow - Full<br/>BUILTIN\Backup Operators: Allow - Full<br/>NT AUTHORITY\INTERACTIVE: Allow - Full</td></tr>
+<tr><td class='labelCol'>E$</td><td>E:\</td><td>默认共享</td><td>BUILTIN\Administrators: Allow - Full<br/>BUILTIN\Backup Operators: Allow - Full<br/>NT AUTHORITY\INTERACTIVE: Allow - Full</td></tr>
+<tr><td class='labelCol'>F$</td><td>F:\</td><td>默认共享</td><td>BUILTIN\Administrators: Allow - Full<br/>BUILTIN\Backup Operators: Allow - Full<br/>NT AUTHORITY\INTERACTIVE: Allow - Full</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section page-section" id="section-8">
+    <h2>8. Screen Saver Settings</h2>
+    <table>
+        <tbody>
+        <tr><td class='labelCol'>Screen Saver</td><td class='hasperm'>Enabled</td></tr>
+<tr><td class='labelCol'>Wait Time</td><td>-</td></tr>
+<tr><td class='labelCol'>On Resume, Display Logon Screen</td><td class='noperm'>No - Login not required on resume</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section page-section" id="section-9">
+<h2>9. Windows Quality / Feature Updates (Latest 10)</h2>
+<p style="font-size:12px;">Latest 10 matching events, newest first. Includes Windows / .NET quality updates and Windows feature updates. Defender intelligence updates are excluded. Classification uses titles and may differ from Settings. Includes failed attempts and uninstallations; this is not a current installed-patch inventory.</p>
+<table><thead><tr><th>Date / Time</th><th>Type</th><th>Update Title</th><th>KB</th><th>Operation</th><th>Result</th></tr></thead>
+<tbody><tr><td>2026-09-26 16:25:57</td><td>Quality</td><td style='overflow-wrap:anywhere;'>2026-09 预览更新 (KB5124010) (26200.9550)</td><td>KB5124010</td><td>Installation</td><td>Succeeded</td></tr>
+<tr><td>2026-09-14 21:51:18</td><td>Quality</td><td style='overflow-wrap:anywhere;'>2026-09 安全更新(KB5129195) (26200.9457)</td><td>KB5129195</td><td>Installation</td><td>Succeeded</td></tr>
+<tr><td>2026-09-08 21:42:45</td><td>Quality</td><td style='overflow-wrap:anywhere;'>2026-09 安全更新(KB5124008) (26200.9445)</td><td>KB5124008</td><td>Installation</td><td>Succeeded</td></tr>
+<tr><td>2026-09-08 21:37:44</td><td>Quality</td><td style='overflow-wrap:anywhere;'>2026-09 .NET Framework 安全更新 (KB5126052)</td><td>KB5126052</td><td>Installation</td><td>Succeeded</td></tr>
+<tr><td>2026-08-11 21:47:17</td><td>Quality</td><td style='overflow-wrap:anywhere;'>2026-08 安全更新(KB5121003) (26200.9168)</td><td>KB5121003</td><td>Installation</td><td>Succeeded</td></tr>
+<tr><td>2026-08-11 21:42:44</td><td>Quality</td><td style='overflow-wrap:anywhere;'>2026-08 .NET Framework 安全更新 (KB5120708)</td><td>KB5120708</td><td>Installation</td><td>Succeeded</td></tr>
+<tr><td>2026-07-14 23:17:10</td><td>Quality</td><td style='overflow-wrap:anywhere;'>2026-07 安全更新(KB5101650) (26200.8875)</td><td>KB5101650</td><td>Installation</td><td>Succeeded</td></tr>
+<tr><td>2026-07-14 21:41:56</td><td>Quality</td><td style='overflow-wrap:anywhere;'>2026-07 .NET Framework 安全更新 (KB5100998)</td><td>KB5100998</td><td>Installation</td><td>Succeeded</td></tr>
+<tr><td>2026-06-10 00:20:38</td><td>Quality</td><td style='overflow-wrap:anywhere;'>2026-06 安全更新(KB5094126) (26200.8655)</td><td>KB5094126</td><td>Installation</td><td>Succeeded</td></tr>
+<tr><td>2026-05-12 21:44:36</td><td>Quality</td><td style='overflow-wrap:anywhere;'>2026-05 安全更新(KB5089549) (26200.8457)</td><td>KB5089549</td><td>Installation</td><td>Succeeded</td></tr></tbody></table>
+</div>
+
+<script>
+function applySectionFilters() {
+    document.querySelectorAll('.sectionChk').forEach(function(chk) {
+        var target = document.getElementById(chk.getAttribute('data-target'));
+        if (target) {
+            target.style.display = chk.checked ? '' : 'none';
+        }
+    });
+}
+
+function setAllSections(checked) {
+    document.querySelectorAll('.sectionChk').forEach(function(chk) {
+        chk.checked = checked;
+    });
+    applySectionFilters();
+}
+
+document.addEventListener('DOMContentLoaded', applySectionFilters);
+</script>
+
+</body>
+</html>
